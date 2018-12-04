@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie-edge">
 
     <!--Page Title-->
-    <title>GTDMFer</title>
+    <title>Routine</title>
 
     <!--Import Bootstrap & css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -27,56 +27,32 @@
 <body>
     <div id="thisHeader"></div>
 <script>
-    let thisHeader = getHeader("today");
+    let thisHeader = getHeader("routine");
     document.getElementById("thisHeader").innerHTML = thisHeader;
 
 </script>
 
 
-<div class="containter">
-    <div class="row align-items-center" style="border: 0px; margin:0;padding:0;">
-        <div class="col-1 twelfth">1</div>
-        <div class="col-1 twelfth">2</div>
-        <div class="col-1 twelfth">3</div>
-        <div class="col-1 twelfth">4</div>
-        <div class="col-1 twelfth">5</div>
-        <div class="col-1 twelfth">6</div>
-        <div class="col-1 twelfth">7</div>
-        <div class="col-1 twelfth">8</div>
-        <div class="col-1 twelfth">9</div>
-        <div class="col-1 twelfth">10</div>
-        <div class="col-1 twelfth">11</div>
-        <div class="col-1 twelfth">12</div>
-    </div>
-</div>
-
 <div class="container">
     <div class="row row-routine align-items-center">
-        <div class="col-12">
-            <h3>Wake Up</h3>
-        </div>
-    </div>
+        <div class="col-xs-12">
+            
+        <table border="1" align="center" cellpadding="5px">
+            <tr><th>seq #</th><th>action statement</th><th>done statement</th><th>edit action</th><th>delete action</th></tr>
+            <tr><td>1</td><td>Wake Up!</td><td>I woke up at X:XX</td><td>edit</td><td>delete</td></tr>
+            <tr><td>2</td><td>Then time to brush my teeth!</td><td>I brushed my teeth</td><td>edit</td><td>delete</td></tr>
+            <tr><td>3</td><td>Wake Up!</td><td>I took a shower</td><td>edit</td><td>delete</td></tr>
+            <tr><td>4</td><td>Do Yoga!</td><td>I did my yoga</td><td>edit</td><td>delete</td></tr>
+            <tr><td>5</td><td>Work hard for that money!</td><td>I worked</td><td>edit</td><td>delete</td></tr>
+            <tr><td>6</td><td>Eat. All. Things.</td><td>I ate dinner</td><td>edit</td><td>delete</td></tr>
+            <tr><td>7</td><td>Sleep Tight!</td><td>I went to sleep at X:XX</td><td>edit</td><td>delete</td></tr>
+            <tr><td>...</td><td>New Action Statement</td><td>New Done Statement</td><td></td><td>save</td></tr>
+        </table>
 
-    <div class="row row-routine align-items-center">
-        <div class="col-12">
-            <h3>Brush Teeth</h3>
-        </div>
-    </div>
 
-    <div class="row row-routine align-items-center">
-        <div class="col-12">
-            <h3>Shower</h3>
-        </div>
-    </div>
-
-    <div class="row row-routine align-items-center">
-        <div class="col-12">
-            <h3>Have Coffee</h3>
         </div>
     </div>
 </div>
-
-
 
 
 
@@ -89,7 +65,7 @@
 
 <!--Include jQuery, Popper.js, and Bootstrap scripts (in that order due to dependencies) -->
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-<!--<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>-->
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
