@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="includes/styles.css">
 
     <script src="includes/pageParts.js"> </script>
+    <script src="includes/getRoutine.js"> </script>
 
     <style> 
         div {border: 0px solid black;} 
@@ -50,7 +51,15 @@
     </div>
 </div>
 
-<div class="container">
+
+
+<div class="container" id="routineContainer">
+
+
+    <script>
+    let thisRoutine = testing();
+    document.getElementById("routineContainer").innerHTML = thisRoutine;
+    </script>
     <div class="row row-routine align-items-center">
         <div class="col-12">
             <h3>Wake Up</h3>

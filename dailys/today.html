@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta tages alwats come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+
+    <!--Page Title-->
+    <title>GTDMFer</title>
+
+    <!--Import Bootstrap & css -->
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../includes/styles.css">
+
+    <script type="text/javascript" src="../../includes/pageParts.js"> </script>
+    <script type="text/javascript" src="../../includes/getRoutine.js"> </script>
+    <script type="text/javascript" src="default.json"> </script>
+
+
+    <script type="text/javascript">
+        var defaultRoutine =    [
+            {
+            id: 0,
+            motivation:'What having it feels like',
+            image: '/assets/images/uthappizza.png',
+            category: 'morning',
+            action:'Wake up early',
+            done:'I woke up at "doneNotes" ',
+            doneNotes: "time marked done",
+            isDone: true
+            },
+            {
+            id: 1,
+            motivation:'What having it feels like',
+            image: '/assets/images/uthappizza.png',
+            category: 'morning',
+            action:'Then time to brush my teeth',
+            done:'Brushed them!',
+            doneNotes: "time marked done",
+            isDone: true
+            },
+            {
+            id: 2,
+            motivation:'What having it feels like',
+            image: '/assets/images/uthappizza.png',
+            category: 'morning',
+            action:'Do Yoga',
+            done:'All invigorated from Yoga Routine [doneNotes]',
+            doneNotes: "yoga routine name or duration of workout",
+            isDone: false
+            },
+            {
+            id: 3,
+            motivation:'What having it feels like',
+            image: '/assets/images/uthappizza.png',
+            category: 'morning',
+            action:'Work Hard for that Money',
+            done:'Focused for [doneNotes]',
+            doneNotes: "summary of work done",
+            isDone: false
+            },
+            {
+            id: 4,
+            motivation:'What having it feels like',
+            image: '/assets/images/uthappizza.png',
+            category: 'morning',
+            action:'Eat. All. Things.',
+            done:'I feasted upon [doneNotes]',
+            doneNotes: "meal nutritional info",
+            isDone: false
+            },
+            {
+            id: 5,
+            motivation:'What having it feels like',
+            image: '/assets/images/uthappizza.png',
+            category: 'morning',
+            action:'Play Hard, Rest Hard',
+            done:'In bed by [doneNotes]',
+            doneNotes: "time marked done",
+            isDone: false
+            }
+        ];
+    </script>
+
+
+
+    <style> 
+        div {border: 0px solid black; max-width: 100%;} 
+        h1#date {text-align: right;}
+        div.twelfth {margin: 0px; border: 1px solid black;}
+
+        div.routineStep {padding: 16px; }
+    </style>
+
+</head>
+
+<body>
+    <div id="thisHeader"></div>
+<script>
+    let thisHeader = getHeader("today");
+    document.getElementById("thisHeader").innerHTML = thisHeader;
+</script>
+
+
+    
+
+ <!--   <div class="row align-items-center" style="border: 0px; margin:0;padding:0;">
+        <div class="col-1 twelfth">1</div>
+        <div class="col-1 twelfth">2</div>
+        <div class="col-1 twelfth">3</div>
+        <div class="col-1 twelfth">4</div>
+        <div class="col-1 twelfth">5</div>
+        <div class="col-1 twelfth">6</div>
+        <div class="col-1 twelfth">7</div>
+        <div class="col-1 twelfth">8</div>
+        <div class="col-1 twelfth">9</div>
+        <div class="col-1 twelfth">10</div>
+        <div class="col-1 twelfth">11</div>
+        <div class="col-1 twelfth">12</div>
+    </div> -->
+</div>
+
+
+
+<div class="container" id="routineContainer">
+
+    <script>
+
+    function markDone(stepId) {  var doneStep = "stepNo" + stepId;   document.getElementById(doneStep).style.display='none'; document.getElementById(doneStep).style.maxHeight='0px';   }
+
+    var thisDay = defaultRoutine;
+
+    var stepData = "<div class='row row-routine align-items-center'>";
+
+    var stepDivPre = "<div class='col-11 m-3 routineStep'> <button type='button' class='btn-block btn-lg' ";
+    var stepDivPost = "</button></div>";
+
+    var totalSteps = thisDay.length;
+    var stepsDone = +0;
+
+
+    for (var i=0; i < totalSteps; i++) {
+        if (thisDay[i].isDone == true) {stepsDone = +stepsDone + 1;}
+        var stepNoId = "id='stepNo" + thisDay[i].id + "' ";
+        var stepOnClick = "onClick='markDone(" + thisDay[i].id + ")'>";
+       stepData = stepData + stepDivPre + stepNoId + stepOnClick + thisDay[i].action + stepDivPost;
+   }
+
+    var stepDiv = document.createElement("routineStep");
+    stepDiv.innerHTML = stepData;
+
+    document.getElementById("routineContainer").appendChild(stepDiv);
+
+    var ratioDone = parseFloat(stepsDone/totalSteps).toPrecision(3);
+
+    var progressDiv = document.createElement("dailyProgress");
+    progressDiv.innerHTML = ratioDone;
+
+    document.getElementById("dailyProgress").appendChild(progressDiv);
+
+
+
+
+    </script>
+
+
+</div>
+
+
+
+
+
+<div id="thisFooter"></div>
+
+<script>
+    let thisFooter = getFooter();
+    document.getElementById("thisFooter").innerHTML = thisFooter;
+</script>
+
+<!--Include jQuery, Popper.js, and Bootstrap scripts (in that order due to dependencies) -->
+<script src="../../../node_modules/jquery/dist/jquery.slim.min.js"></script>
+<!--<script src="../../../node_modules/popper.js/dist/umd/popper.min.js"></script>-->
+<script src="../../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

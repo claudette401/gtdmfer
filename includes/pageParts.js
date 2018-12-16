@@ -13,7 +13,7 @@ function getHeader(pageName){
 
   function returnHTMLHeader(content) {
     let indexHeaderPre = "<header class='jumbotron'> <div class='row row-header'> <div class='col-12'> <h1>";
-    let indexHeaderPost = "</h1> </div> </div> </header> ";
+    let indexHeaderPost = "</h1> </div> </div> <div id='dailyProgress'></div> </header> ";
     return (indexHeaderPre+content+indexHeaderPost);
   }
 
@@ -33,8 +33,8 @@ let footerLongString =`
                     <h5>Links</h5>           
                     <ul class='list-unstyled'>
                         <li><a href='readME.html'>READ.me</a></li>
-                        <li><a href='index.html'>Today</a></li>
-                        <li><a href='routine.html'>Routine</a></li>
+                        <li><a href='today.html'>Today</a></li>
+                        <li><a href='default.js'>Routine</a></li>
                     </ul>
                   </div>
 
